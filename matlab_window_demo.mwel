@@ -1,0 +1,17 @@
+var rand_var = 0
+
+var sync (0) {
+    report ('sync = $sync')
+}
+
+
+protocol 'MATLAB Window Demo' {
+    sync = 1
+
+    block (nsamples = 10) {
+        rand_var = disc_rand(1, 10)
+        report ('rand_var = $rand_var')
+    }
+
+    sync = 0
+}
